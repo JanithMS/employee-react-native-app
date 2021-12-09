@@ -1,0 +1,37 @@
+mutation CreateEmployee($createEmployeeInput: CreateEmployeeInput!) {
+  createEmployee(CreateEmployeeInput: $createEmployeeInput)
+}
+
+mutation DeleteEmployee($employeeId: String!) {
+  deleteEmployee(EmployeeID: $employeeId)
+}
+
+query GetAllEmployees {
+  getAllEmployees {
+    id
+    firstName
+    lastName
+    email
+  }
+}
+
+query GetEmployee($getEmployeeEmployeeId: String!) {
+  getEmployee(EmployeeID: $getEmployeeEmployeeId) {
+    id
+    firstName
+    lastName
+    employeeID
+    email
+    number
+  }
+}
+
+mutation UpdateEmployee(
+  $updateEmployeeInput: UpdateEmployeeInput!
+  $updateEmployeeEmployeeId: String!
+) {
+  updateEmployee(
+    UpdateEmployeeInput: $updateEmployeeInput
+    EmployeeID: $updateEmployeeEmployeeId
+  )
+}
